@@ -5,23 +5,38 @@ import (
 )
 
 func main() {
-	x := []int{10, 20, 30, 40, 50}
-	y := x[1:3]
-	fmt.Println("y:", y)
-	fmt.Println(len(y))
-	fmt.Println(cap(y))
+	// Declaring array
+	var a [5]int
 
-	z := x[:3]
-	fmt.Println("z:", z)
-	fmt.Println(len(z))
-	fmt.Println(cap(z))
-	x1 := x[:]
-	fmt.Println("x1:", x1)
-	fmt.Println(len(x1))
-	fmt.Println(cap(x1))
+	// Initializing array
+	a[0] = 10
+	a[1] = 20
 
-	x1[4] = 75
-	fmt.Println("x:", x)
-	fmt.Println("x1:", x1)
+	fmt.Println("a:", a)
 
+	b := [5]int{10, 20, 30, 40, 50}
+	fmt.Println("b:", b)
+	fmt.Println(len(b)) // len is a built-in function
+
+	// Array literal with ...
+	c := [...]int{10, 20, 30, 40, 50}
+	fmt.Println("c:", c)
+	fmt.Println(len(c))
+
+	// Initializing value at specific index using array literal.
+	d := [3]int{0: 10, 2: 30}
+	fmt.Println("d:", d)
+	fmt.Println(len(d))
+
+	// Iterate over array.
+	for i := 0; i < len(d); i++ {
+		fmt.Printf("%d\t", d[i])
+	}
+	fmt.Println()
+
+	// Iterate over array using range.
+	for i, v := range d {
+		fmt.Printf("i:%d, v:%d\t", i, v)
+	}
+	fmt.Println()
 }
